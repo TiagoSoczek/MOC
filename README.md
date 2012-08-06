@@ -1,4 +1,4 @@
 MOC
 ===
 
-Conteúdo dos Microsoft Official Courses (MOC)
+Conteúdo dos Cursos Oficiais Microsoft (MOC)
