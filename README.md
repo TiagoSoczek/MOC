@@ -36,9 +36,11 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 
 ### Geral
 
+* http://www.fiddler2.com/fiddler2/ - Análise de tráfego HTTP
 * http://www.baremetalsoft.com/baretail/ - Leitura de logs
 * http://technet.microsoft.com/en-us/sysinternals/default - Ótimos utilitários (Process Explorer, psexec, ...)
 * http://www.firstobject.com/dn_editor.htm - Foxe - Leitor XML - Consegue ler rapidamente arquivos gigantes
+* http://hanselman.com/tools - Lista de ferramentas
 
 ## Blibliotecas
 
@@ -57,4 +59,14 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 
 ### Material
 
+## Geral
 * http://aurelio.net/regex/guia/ - Expressões Regulares - Uma abordagem divertida
+* http://blog.caelum.com.br/por-uma-web-mais-rapida-26-tecnicas-de-otimizacao-de-sites/ - Dicas de otimização de sites
+
+## .NET
+* http://msdn.microsoft.com/pt-br/library/system.security.cryptography.md5.aspx - Hash de senhas, etc...
+* http://www.dotnetcurry.com/ShowArticle.aspx?ID=121 - Dicas ASP.NET Validation
+
+### Blogs
+
+http://highscalability.com/ - Relatos da construção de aplicações com grande volume de acessos
