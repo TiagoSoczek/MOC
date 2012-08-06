@@ -57,16 +57,16 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 * http://logging.apache.org/log4net/ -  Geração de Logs
 * http://nlog-project.org/ - Geração de Logs
 
-### Material
+## Material
 
-## Geral
+### Geral
 * http://aurelio.net/regex/guia/ - Expressões Regulares - Uma abordagem divertida
 * http://blog.caelum.com.br/por-uma-web-mais-rapida-26-tecnicas-de-otimizacao-de-sites/ - Dicas de otimização de sites
 
-## .NET
+### .NET
 * http://msdn.microsoft.com/pt-br/library/system.security.cryptography.md5.aspx - Hash de senhas, etc...
 * http://www.dotnetcurry.com/ShowArticle.aspx?ID=121 - Dicas ASP.NET Validation
 
-### Blogs
+## Blogs
 
 http://highscalability.com/ - Relatos da construção de aplicações com grande volume de acessos
