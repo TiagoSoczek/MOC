@@ -1,0 +1,21 @@
+﻿Projeto Wise.Negocio
+--------------------------------------------------
+Criar classe Usuario
+	public int Id { get; set; }
+	public string Nome { get; set; }
+	public string Senha { get; set; }
+
+Criar classe repositório UsuarioRepository
+
+Usuario ObterPorNome(string nome)
+{
+	// Código para ir na base e retornar o usuário
+	// Será usado SqlConnection, SqlCommand, DataReader
+}
+
+Criar base de dados - Nome: WISEAUTH
+Tabela: Usuario
+Campos: 
+	Id - Int - PK - IDENTITY - NOT NULL
+	Email - VARCHAR(50) - NOT NULL
+	Senha - VARCHAR(50) - NOT NULL

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wise.Web", "Wise.Web\Wise.Web.csproj", "{CEC701C3-C1BF-4075-A43E-2A7FA10B76B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wise.Negocio", "Wise.Negocio\Wise.Negocio.csproj", "{400B94CC-769A-4F50-8FEF-25E70AE173B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D41D1426-83A2-4C1C-A851-C35D47CF9B3E}"
+	ProjectSection(SolutionItems) = preProject
+		SpecModulo4.txt = SpecModulo4.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEC701C3-C1BF-4075-A43E-2A7FA10B76B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC701C3-C1BF-4075-A43E-2A7FA10B76B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC701C3-C1BF-4075-A43E-2A7FA10B76B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC701C3-C1BF-4075-A43E-2A7FA10B76B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400B94CC-769A-4F50-8FEF-25E70AE173B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400B94CC-769A-4F50-8FEF-25E70AE173B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400B94CC-769A-4F50-8FEF-25E70AE173B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400B94CC-769A-4F50-8FEF-25E70AE173B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

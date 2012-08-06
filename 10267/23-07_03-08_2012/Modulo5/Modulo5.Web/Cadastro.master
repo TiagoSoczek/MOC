@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Cadastro.master.cs" Inherits="Modulo5.Web.Cadastro" %>
+
+<%@ Register src="Pesquisa.ascx" tagname="Pesquisa" tagprefix="uc1" %>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ConteudoHead" runat="server">
+    <asp:ContentPlaceHolder ID="ConteudoHead" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ConteudoPrincipal" runat="server">
+
+    <h2>Cadastro</h2>
+
+    <asp:ContentPlaceHolder ID="ConteudoCadastro" runat="server">
+                
+    </asp:ContentPlaceHolder>
+    
+    <uc1:Pesquisa ID="Pesquisa2" runat="server" />
+
+</asp:Content>

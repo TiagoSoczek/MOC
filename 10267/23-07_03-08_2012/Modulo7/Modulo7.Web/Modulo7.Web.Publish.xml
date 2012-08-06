@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="c:\temp\wise" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Modulo7.Web.pdb" publishTime="07/26/2012 22:23:53" />
+    <file relUrl="bin/Modulo7.Web.dll" publishTime="07/26/2012 22:23:53" />
+    <file relUrl="Web.config" publishTime="07/26/2012 22:30:49" />
+    <file relUrl="Default.aspx" publishTime="07/26/2012 22:23:01" />
+  </publishProfile>
+</publishData>

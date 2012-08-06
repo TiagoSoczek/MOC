@@ -1,0 +1,19 @@
+Página de Login
+
+1 WebForm (Login.aspx)
+2 Labels (lblNome e lblSenha)
+2 TextBox (txtNome e txtSenha)
+1 Button (btnLogin)
+1 Label (lblResultado)
+
+Após a validação do nome e da senha deve ser exibido na lblResultado
+o resultado da validação, a cor da lblResultado deve ser verde ou 
+vermelha, de acordo com o resultado.
+
+A validação das credenciais deve acontecer em uma classe separada.
+AutenticacaoService.cs
+
+public bool Autenticar(string nome, string senha)
+{
+    return nome.Equals("tiago") && senha.Equals("!@#");
+}

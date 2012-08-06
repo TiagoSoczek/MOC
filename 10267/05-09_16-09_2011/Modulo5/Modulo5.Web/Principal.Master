@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="Modulo5.Web.Principal" %>
+
+<%@ Register src="Pesquisa.ascx" tagname="Pesquisa"  tagprefix="uc1" %>
+<%@ Register namespace="Modulo5.ServerControls" assembly="Modulo5.ServerControls" tagPrefix="ext" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <ext:MeuTitulo Text="Teste do Meu Titulo" runat="server"/>
+
+        <uc1:Pesquisa ID="Pesquisa1" runat="server" />
+        <h1>
+            Header</h1>
+            
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            
+        
+        </asp:ContentPlaceHolder>
+        <h3>Footer</h3>
+    </div>
+    </form>
+</body>
+</html>

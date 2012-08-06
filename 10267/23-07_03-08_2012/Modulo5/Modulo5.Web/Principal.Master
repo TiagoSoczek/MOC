@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="Modulo5.Web.Principal" %>
+
+<%@ Register src="Pesquisa.ascx" tagname="Pesquisa" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="ConteudoHead" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+        <h1>Módulo 5 - Master Pages e Validação</h1>
+
+        <asp:ContentPlaceHolder ID="ConteudoPrincipal" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <p>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/NovoCliente.aspx" style="text-decoration: none;">Novo Cliente</asp:HyperLink>
+    </p>
+    <p>
+        &nbsp;</p>
+    </form>
+</body>
+</html>
