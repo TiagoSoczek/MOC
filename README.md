@@ -42,12 +42,12 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 * http://www.firstobject.com/dn_editor.htm - Foxe - Leitor XML - Consegue ler rapidamente arquivos gigantes
 * http://hanselman.com/tools - Lista de ferramentas
 
-## Blibliotecas
+## Bibliotecas
 
 ### Web - JS - CSS
 
 * http://twitter.github.com/bootstrap/ - Base para construção de sites, muito profissa
-* http://harvesthq.github.com/chosen/ - ComboBox beeem melhorada
+* http://harvesthq.github.com/chosen/ - ComboBox melhorada
 * http://d3js.org/ - Exibição de dados utilizando gráficos, muito bom!
 
 ### .NET
