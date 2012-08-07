@@ -66,7 +66,14 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 ### .NET
 * http://msdn.microsoft.com/pt-br/library/system.security.cryptography.md5.aspx - Hash de senhas, etc...
 * http://www.dotnetcurry.com/ShowArticle.aspx?ID=121 - Dicas ASP.NET Validation
+* http://studiostyl.es/ - Estilos para o Visual Studio
 
 ## Blogs
 
-http://highscalability.com/ - Relatos da construção de aplicações com grande volume de acessos
+* http://highscalability.com/ - Relatos da construção de aplicações com grande volume de acessos
+
+## Hospedagem Integrada com Controle de Versão
+
+* https://appharbor.com/ - Aplicações .NET
+* http://www.heroku.com/ - Aplicações  Ruby, Node.js, Clojure, Java, Python, e Scala
+                         
