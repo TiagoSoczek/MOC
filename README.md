@@ -48,7 +48,9 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 
 * http://twitter.github.com/bootstrap/ - Base para construção de sites, muito profissa
 * http://harvesthq.github.com/chosen/ - ComboBox melhorada
+* http://ivaynberg.github.com/select2/ - ComboBox melhorada (2)
 * http://d3js.org/ - Exibição de dados utilizando gráficos, muito bom!
+* http://css-tricks.com/ - Muito conteúdo sobre CSS
 
 ### .NET
 
