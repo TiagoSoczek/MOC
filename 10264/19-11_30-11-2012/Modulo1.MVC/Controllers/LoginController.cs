@@ -5,9 +5,12 @@ namespace Modulo1.MVC.Controllers
 	using Models;
 
 	public class LoginController : Controller
-    {
-        //
-        // GET: /Login/
+	{
+		[NonAction]
+		public ActionResult Inicial(string nome)
+		{
+			return View();
+		}
 
 		public ActionResult Inicial(string nome, bool? xml)
 		{
@@ -31,7 +34,7 @@ namespace Modulo1.MVC.Controllers
 				view = "IndexXml";
 			}
 
-            return View(view, modelo);
-        }
-    }
+			return View(view, modelo);
+		}
+	}
 }
