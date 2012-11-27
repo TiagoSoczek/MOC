@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+	
+	<link rel="stylesheet" type="text/css" href="<%= Url.Content("~/content/principal.css") %>" />
+
+	<script src="<%= Url.Content("~/scripts/jquery-1.7.1.js") %>"></script>
+	
+	<script type="text/javascript" language="javascript">
+		/*
+		var container = document.getElementById("container");
+
+		container.setAttribute("style", "background-color: red;");
+		*/
+		
+		$(document).ready(function () {
+			$("#container").attr("style", "background-color: red;");
+			// $("#container").css("background-color", "red");	
+
+			$("h2").click(function() {
+
+				$(this).toggleClass("highlight");
+				$(this).fadeOut("slow");
+				
+			});
+		});
+
+	</script>
+</head>
+<body>
+    <div id="container" style="padding: 20px;">
+	    <!--INICIO-->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+		<!--FIM-->
+    </div>
+		
+	<h2>TESTE</h2>
+	<h2>TESTE</h2>
+	<h2>TESTE</h2>
+
+</body>
+</html>

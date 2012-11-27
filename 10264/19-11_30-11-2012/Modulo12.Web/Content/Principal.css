@@ -1,0 +1,28 @@
+﻿#container {
+	border: 1px solid red;
+}
+
+h2 {
+	color: blue;
+	font-style: italic;
+}
+
+.titulo-sucesso {
+	color: green;
+}
+
+span .titulo-sucesso {
+	color: darkgreen;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+div.titulo-sucesso {
+	background-color: green;
+	color: white;
+	padding: 20px;
+}
+
+.highlight {
+	font-size: 40px;
+}
