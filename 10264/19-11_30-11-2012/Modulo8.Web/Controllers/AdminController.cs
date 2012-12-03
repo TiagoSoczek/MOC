@@ -17,7 +17,7 @@ namespace Modulo8.Web.Controllers
 
 	    public ActionResult RemoverTodosProdutos()
 	    {
-		    var produtoService = new ProdutoService();
+		    var produtoService = new ProductService();
 
 		    produtoService.RemoverTodos();
 

@@ -12,11 +12,11 @@ namespace Modulo8.Web.Controllers
 
 	public class ProdutosController : Controller
 	{
-		private ProdutoService _produtoService;
+		private ProductService _productService;
 
 		public ProdutosController()
 		{
-			_produtoService = new ProdutoService();
+			_productService = new ProductService();
 		}
 
 		public ActionResult Index(string termo)
@@ -25,7 +25,7 @@ namespace Modulo8.Web.Controllers
 
 	        model.Termo = termo;
 
-			model.Produtos = _produtoService.PesquisarProdutos(termo);
+			model.Produtos = _productService.PesquisarProdutos(termo);
 
 			return View(model);
         }
@@ -39,7 +39,7 @@ namespace Modulo8.Web.Controllers
 
 		public ActionResult Salvar(Produto produto)
 		{
-			_produtoService.Salvar(produto);
+			_productService.Salvar(produto);
 
 			return RedirectToAction("Index");
 		}

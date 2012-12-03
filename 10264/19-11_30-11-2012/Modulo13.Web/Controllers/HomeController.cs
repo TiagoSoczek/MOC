@@ -28,6 +28,11 @@ namespace Modulo13.Web.Controllers
 
 		public ActionResult ObterClientes()
 		{
+#if DEBUG
+			Console.WriteLine("Debugando...");
+#else
+			Console.WriteLine("Rodando em modo Release...");
+#endif
 			var clientes = new List<Modulo13.Web.Models.Cliente>();
 
 			for (int i = 0; i < new Random().Next(10, 50); i++)

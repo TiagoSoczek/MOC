@@ -7,8 +7,22 @@
     <title>Index</title>
 	<script src="<%= Url.Content("~/scripts/jquery-1.7.1.js") %>"></script>
 	<script>
-		$.ajaxSetup({cache:false});
+		$.ajaxSetup({ cache: false });
+
 		$(document).ready(function () {
+
+			/*$.ajaxSend(function () {
+				console.log("Send");
+			});*/
+/*
+			$.ajaxComplete(function () {
+				console.log("Complete");
+			});
+
+			$.ajaxError(function () {
+				console.log("Error");
+			});*/
+
 			$("#btn-carregar").click(function () {
 				$("#conteudo").load("<%= Url.Action("ConteudoParcial") %>");
 			});
@@ -42,7 +56,7 @@
 		<div id="conteudo">
 			
 		</div>
-		<button id="btn-carregar-clientes">Carregar Clientes</button>
+		<button id="btn-carregar-clientes">Carregar Clientes Random</button>
 		
 		<select id="lista-clientes" />
     </div>
