@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E92BB681-5327-4171-8CE8-167C9B1FCD22}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{5BF2F2C3-BF44-47B0-B838-24E491E894EB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MOC10265.Persistence</RootNamespace>
-    <AssemblyName>MOC10265.Persistence</AssemblyName>
+    <RootNamespace>Modulo2.Shell</RootNamespace>
+    <AssemblyName>Modulo2.Shell</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,12 +33,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\MOC10265.Web\bin\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,18 +48,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADO\ProdutoADORepository.cs" />
-    <Compile Include="EF\CatalogoContextoDb.cs" />
-    <Compile Include="EF\Mapeamentos\ProdutoMap.cs" />
-    <Compile Include="EF\ProdutoEFRepository.cs" />
+    <Compile Include="CatalogoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Produto.cs">
+      <DependentUpon>CatalogoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Produto.Ext.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\MOC10265.Model\MOC10265.Model.csproj">
-      <Project>{D3B4AD9A-8C13-4EC1-9DD0-D542C39D3719}</Project>
-      <Name>MOC10265.Model</Name>
-    </ProjectReference>
+    <EntityDeploy Include="CatalogoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CatalogoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="CatalogoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CatalogoModel.edmx</DependentUpon>
+      <LastGenOutput>CatalogoModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="CatalogoModel.edmx.diagram">
+      <DependentUpon>CatalogoModel.edmx</DependentUpon>
+    </None>
+    <None Include="CatalogoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CatalogoModel.edmx</DependentUpon>
+      <LastGenOutput>CatalogoModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

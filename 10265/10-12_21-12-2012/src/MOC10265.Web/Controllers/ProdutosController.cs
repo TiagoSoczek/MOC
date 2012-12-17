@@ -6,6 +6,7 @@
 	using Model.Services;
 	using Models;
 	using Persistence.ADO;
+	using Persistence.EF;
 
 	public class ProdutosController : Controller
 	{
@@ -13,7 +14,8 @@
 
 		public ProdutosController()
 		{
-			var produtoRepository = new ProdutoADORepository();
+			// var produtoRepository = new ProdutoADORepository();
+			var produtoRepository = new ProdutoEFRepository();
 
 			_catalogoService = new CatalogoService(produtoRepository);
 		}

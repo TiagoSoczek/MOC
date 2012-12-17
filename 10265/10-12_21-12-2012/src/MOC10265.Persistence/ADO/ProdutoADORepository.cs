@@ -156,7 +156,7 @@
 		{
 			int id = int.Parse(dr["Id"].ToString());
 			string nome = dr["Nome"].ToString();
-			double preco = double.Parse(dr["Preco"].ToString());
+			decimal preco = decimal.Parse(dr["Preco"].ToString());
 			int quantidade = int.Parse(dr["Quantidade"].ToString());
 			bool ativo = bool.Parse(dr["Ativo"].ToString());
 			var versao = (byte[]) dr["Versao"];
