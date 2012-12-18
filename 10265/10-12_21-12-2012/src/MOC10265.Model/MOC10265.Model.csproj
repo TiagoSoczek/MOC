@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Departamento.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IDepartamentoRepository.cs" />
     <Compile Include="Repositories\IProdutoRepository.cs" />
     <Compile Include="Services\CatalogoService.cs" />
   </ItemGroup>

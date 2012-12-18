@@ -11,7 +11,7 @@
 		{
 			using (var contexto = ObterContexto())
 			{
-				return contexto.Produto.ToList();
+				return contexto.Linq<Produto>().ToList();
 			}
 		}
 
@@ -19,7 +19,7 @@
 		{
 			using (var contexto = ObterContexto())
 			{
-				return contexto.Produto.
+				return contexto.Linq<Produto>().
 					FirstOrDefault(p => p.Id == id);
 			}
 		}
@@ -30,10 +30,10 @@
 			{
 				// TODO: Verificar forma mais eficiente
 
-				var produto = contexto.Produto.
+				var produto = contexto.Linq<Produto>().
 							FirstOrDefault(p => p.Id == id);
 
-				contexto.Produto.Remove(produto);
+				contexto.Linq<Produto>().Remove(produto);
 
 				contexto.SaveChanges();
 			}
@@ -43,7 +43,7 @@
 		{
 			using (var contexto = ObterContexto())
 			{
-				contexto.Produto.Add(produto);
+				contexto.Linq<Produto>().Add(produto);
 
 				contexto.SaveChanges();
 

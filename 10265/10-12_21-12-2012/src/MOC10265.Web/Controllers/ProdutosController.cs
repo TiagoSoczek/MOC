@@ -16,8 +16,9 @@
 		{
 			// var produtoRepository = new ProdutoADORepository();
 			var produtoRepository = new ProdutoEFRepository();
+			var departamentoRepository = new DepartamentoEFRepository();
 
-			_catalogoService = new CatalogoService(produtoRepository);
+			_catalogoService = new CatalogoService(produtoRepository, departamentoRepository);
 		}
 
 		public ActionResult Index()

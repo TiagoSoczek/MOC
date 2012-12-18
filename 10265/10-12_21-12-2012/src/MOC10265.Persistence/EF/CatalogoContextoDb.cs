@@ -17,19 +17,17 @@
 		{
 		}
 
-		public DbSet<Produto> Produto
+		public DbSet<T> Linq<T>() where T : class
 		{
-			get
-			{
-				return Set<Produto>();
-			}
+			return Set<T>();
 		}
-
+		
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 			
 			modelBuilder.Configurations.Add(new ProdutoMap());
+			// modelBuilder.Configurations.Add(new DepartamentoMap());
 
 			base.OnModelCreating(modelBuilder);
 		}

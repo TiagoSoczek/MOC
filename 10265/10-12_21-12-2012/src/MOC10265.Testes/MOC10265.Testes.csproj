@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Persistence\ADO\ProdutoADORepositoryTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CatalogoServiceTestCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

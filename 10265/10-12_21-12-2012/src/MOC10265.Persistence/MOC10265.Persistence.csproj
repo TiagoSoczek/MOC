@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="ADO\ProdutoADORepository.cs" />
     <Compile Include="EF\CatalogoContextoDb.cs" />
+    <Compile Include="EF\DepartamentoEFRepository.cs" />
+    <Compile Include="EF\Mapeamentos\DepartamentoMap.cs" />
     <Compile Include="EF\Mapeamentos\ProdutoMap.cs" />
     <Compile Include="EF\ProdutoEFRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,6 +1,7 @@
 ﻿namespace MOC10265.Model
 {
 	using System;
+	using System.Collections.Generic;
 
 	public class Produto
 	{
@@ -12,6 +13,8 @@
 		public int Quantidade { get; set; }
 		public bool Ativo { get; set; }
 		public DateTime? DataPrimeiraCompra { get; set; }
+		
+		public Departamento Departamento { get; set; }
 
 		/*public override string ToString()
 		{

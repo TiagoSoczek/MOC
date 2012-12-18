@@ -6,10 +6,17 @@
 	public class CatalogoService
 	{
 		private readonly IProdutoRepository _produtoRepository;
+		private readonly IDepartamentoRepository _departamentoRepository;
 
-		public CatalogoService(IProdutoRepository produtoRepository)
+		public CatalogoService(IProdutoRepository produtoRepository, IDepartamentoRepository departamentoRepository)
 		{
 			_produtoRepository = produtoRepository;
+			_departamentoRepository = departamentoRepository;
+		}
+
+		public List<Departamento> ObterTodosDepartamentos()
+		{
+			return _departamentoRepository.ObterTodos();
 		}
 
 		public List<Produto> ObterTodosProdutos()
