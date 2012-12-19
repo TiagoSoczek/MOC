@@ -23,6 +23,10 @@
 			Property(p => p.Preco);
 			Property(p => p.Ativo);
 			Property(p => p.DataPrimeiraCompra);
+
+			HasOptional(p => p.Departamento).
+				WithMany().
+				Map(k => k.MapKey("DepartamentoId"));
 		}
 	}
 }

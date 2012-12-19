@@ -11,7 +11,9 @@
 		{
 			using (var contexto = ObterContexto())
 			{
-				return contexto.Linq<Produto>().ToList();
+				return contexto.Linq<Produto>().
+					Include("Departamento").
+					ToList();
 			}
 		}
 
@@ -20,6 +22,7 @@
 			using (var contexto = ObterContexto())
 			{
 				return contexto.Linq<Produto>().
+					Include("Departamento").
 					FirstOrDefault(p => p.Id == id);
 			}
 		}
@@ -43,6 +46,14 @@
 		{
 			using (var contexto = ObterContexto())
 			{
+				// Desabilitar o ChangeTracking
+				// contexto.Configuration.AutoDetectChangesEnabled = false;
+
+				if (produto.Departamento != null && produto.Departamento.Id > 0)
+				{
+					contexto.Linq<Departamento>().Attach(produto.Departamento);
+				}
+				
 				contexto.Linq<Produto>().Add(produto);
 
 				contexto.SaveChanges();

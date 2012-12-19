@@ -27,7 +27,7 @@
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 			
 			modelBuilder.Configurations.Add(new ProdutoMap());
-			// modelBuilder.Configurations.Add(new DepartamentoMap());
+			modelBuilder.Configurations.Add(new DepartamentoMap());
 
 			base.OnModelCreating(modelBuilder);
 		}
