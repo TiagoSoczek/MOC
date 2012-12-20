@@ -27,7 +27,7 @@
 		{
 			var produtos = _catalogoService.ObterTodosProdutos();
 
-			Assert.IsTrue(produtos.All(p => p.Departamento != null),
+			Assert.IsTrue(produtos.All(p => p.Departamentos != null),
 				"Todos produtos devem ter departamento");
 		}
 
@@ -45,15 +45,21 @@
 
 			departamento.Nome = "Departamento Teste";
 
-			produto.Departamento = departamento;
+			var departamento2 = new Departamento();
+
+			departamento2.Nome = "Departamento Teste 2";
+
+			produto.AddDepartamento(departamento);
+			produto.AddDepartamento(departamento2);
 
 			var produtoSalvo = _catalogoService.Salvar(produto);
 
 			Assert.IsNotNull(produtoSalvo);
 			Assert.IsTrue(produtoSalvo.Id > 0);
 
-			Assert.IsNotNull(produtoSalvo.Departamento);
-			Assert.IsTrue(produtoSalvo.Departamento.Id > 0);
+			Assert.IsNotNull(produtoSalvo.Departamentos);
+			Assert.IsTrue(produtoSalvo.Departamentos.Count > 0);
+			Assert.IsTrue(produtoSalvo.Departamentos[0].Id > 0);
 		}
 
 		[TestMethod]
@@ -70,15 +76,16 @@
 
 			departamento.Id = 1;
 
-			produto.Departamento = departamento;
+			produto.AddDepartamento(departamento);
 
 			var produtoSalvo = _catalogoService.Salvar(produto);
 
 			Assert.IsNotNull(produtoSalvo);
 			Assert.IsTrue(produtoSalvo.Id > 0);
 
-			Assert.IsNotNull(produtoSalvo.Departamento);
-			Assert.AreEqual(1, produtoSalvo.Departamento.Id);
+			Assert.IsNotNull(produtoSalvo.Departamentos);
+			Assert.IsTrue(produtoSalvo.Departamentos.Count > 0);
+			Assert.AreEqual(1, produtoSalvo.Departamentos[0].Id);
 		}
 	}
 }

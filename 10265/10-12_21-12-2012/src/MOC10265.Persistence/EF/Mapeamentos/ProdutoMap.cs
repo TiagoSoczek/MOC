@@ -15,18 +15,28 @@
 				HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 			
 			Property(p => p.Versao).
+				HasColumnType("timestamp").
 				HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).
 				IsConcurrencyToken();
 
-			Property(p => p.Nome);
-			Property(p => p.Quantidade);
-			Property(p => p.Preco);
-			Property(p => p.Ativo);
-			Property(p => p.DataPrimeiraCompra);
+			Property(p => p.Nome).HasMaxLength(100).IsRequired();
+			Property(p => p.Quantidade).IsRequired();
+			Property(p => p.Preco).IsRequired();
+			Property(p => p.Ativo).IsRequired();
+			Property(p => p.DataPrimeiraCompra).IsOptional();
 
-			HasOptional(p => p.Departamento).
+			/*HasOptional(p => p.Departamento).
 				WithMany().
-				Map(k => k.MapKey("DepartamentoId"));
+				Map(k => k.MapKey("DepartamentoId"));*/
+
+			HasMany(p => p.Departamentos).
+				WithMany().
+				Map(m =>
+					    {
+						    m.ToTable("ProdutoDepartamento");
+						    m.MapLeftKey("ProdutoId");
+						    m.MapRightKey("DepartamentoId");
+					    });
 		}
 	}
 }

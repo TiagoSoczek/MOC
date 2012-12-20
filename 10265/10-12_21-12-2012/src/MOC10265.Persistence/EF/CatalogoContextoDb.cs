@@ -3,13 +3,14 @@
 	using System.Data.Entity;
 	using System.Data.Entity.ModelConfiguration.Conventions;
 	using Mapeamentos;
-	using Model;
 
 	public class CatalogoContextoDb : DbContext
 	{
 		static CatalogoContextoDb()
 		{
 			Database.SetInitializer<CatalogoContextoDb>(null);
+
+			// Database.SetInitializer(new DropCreateDatabaseAlways<CatalogoContextoDb>());
 		}
 
 		public CatalogoContextoDb()

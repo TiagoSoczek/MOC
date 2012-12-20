@@ -14,7 +14,7 @@
 			Property(d => d.Id).
 				HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-			Property(d => d.Nome);
+			Property(d => d.Nome).HasMaxLength(100).IsRequired();
 		}
 	}
 }
