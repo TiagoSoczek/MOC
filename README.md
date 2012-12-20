@@ -64,6 +64,7 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 ### Geral
 * http://aurelio.net/regex/guia/ - Expressões Regulares - Uma abordagem divertida
 * http://blog.caelum.com.br/por-uma-web-mais-rapida-26-tecnicas-de-otimizacao-de-sites/ - Dicas de otimização de sites
+* http://www.linhadecodigo.com.br/artigo/666/trabalhando-com-isolation-level-e-hints.aspx - Trabalhando com Isolation Level e Hints
 
 ### .NET
 * http://msdn.microsoft.com/pt-br/library/system.security.cryptography.md5.aspx - Hash de senhas, etc...
