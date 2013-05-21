@@ -43,5 +43,10 @@
 
 			return _produtoRepository.Inserir(produto);
 		}
+
+		public List<Produto> PesquisarProdutos(string termo, int qtdeRegistros)
+		{
+			return _produtoRepository.PesquisarProdutos(termo, qtdeRegistros);
+		}
 	}
 }

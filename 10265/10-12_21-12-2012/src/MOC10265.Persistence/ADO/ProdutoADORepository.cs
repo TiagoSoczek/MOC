@@ -136,6 +136,11 @@
 			}
 		}
 
+		public List<Produto> PesquisarProdutos(string termo, int qtdeRegistros)
+		{
+			throw new NotImplementedException();
+		}
+
 		private SqlConnection ObterConexao()
 		{
 			ConnectionStringSettings config = ConfigurationManager.ConnectionStrings["Default"];

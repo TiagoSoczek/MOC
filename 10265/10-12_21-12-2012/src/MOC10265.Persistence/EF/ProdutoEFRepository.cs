@@ -73,6 +73,16 @@
 			return Atualizar(produto);
 		}
 
+		public List<Produto> PesquisarProdutos(string termo, int qtdeRegistros)
+		{
+			using (var contexto = ObterContexto())
+			{
+				return contexto.Linq<Produto>().
+				                Where(p => p.Nome.Contains(termo)).
+				                Take(qtdeRegistros).ToList();
+			}
+		}
+
 		private CatalogoContextoDb ObterContexto()
 		{
 			return new CatalogoContextoDb();

@@ -1,11 +1,10 @@
 ﻿namespace MOC10265.Testes.Persistence.EF
 {
 	using System;
-	using System.Collections;
-	using System.Data.Entity.Infrastructure;
 	using System.Data.Entity.Validation;
 	using System.Diagnostics;
 	using System.Linq;
+	using System.Transactions;
 	using MOC10265.Persistence.EF;
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using Model;
@@ -71,7 +70,7 @@
 		public void ObterProdutos_Paginados()
 		{
 			var primeiros10 = _contexto.Linq<Produto>().Take(10);
-			
+
 			ExibirQuery(primeiros10);
 
 			var proximos10 = _contexto.Linq<Produto>().
@@ -108,10 +107,10 @@
 				GroupBy(g => g.Nome).
 				Select(p => new
 				{
-					Nome = p.Key, 
+					Nome = p.Key,
 					ValorTotal = p.Sum(g => g.Preco),
-					Minimo = p.Min(g => g.Preco), 
-					Medio = p.Average(g => g.Preco), 
+					Minimo = p.Min(g => g.Preco),
+					Medio = p.Average(g => g.Preco),
 					Maximo = p.Max(g => g.Preco),
 					Total = p.Count()
 				});
@@ -167,15 +166,15 @@
 		public void Joins()
 		{
 			var joinDepto = from p in _contexto.Linq<Produto>()
-			                from d in p.Departamentos
+							from d in p.Departamentos
 							where d.Nome.Contains("teste")
-							select new {p, p.Departamentos};
+							select new { p, p.Departamentos };
 
 			ExibirQuery(joinDepto);
 		}
 
 		[TestMethod]
-		public void FirstAndLast()
+		public void FirstOrDefault()
 		{
 			var produtoExistente = _contexto.Linq<Produto>().
 								FirstOrDefault(p => p.Id == 1);
@@ -214,6 +213,49 @@
 			Console.WriteLine(algumProdutoAcima2000);
 		}
 
+		[TestMethod]
+		public void UtilizandoTransaction()
+		{
+			using (var tx = new TransactionScope(TransactionScopeOption.Required,
+				new TransactionOptions
+							{
+								IsolationLevel = IsolationLevel.ReadUncommitted
+							}))
+			{
+				try
+				{
+					var produto = new Produto();
+
+					produto.Nome = "Teste #1";
+					produto.Preco = 90;
+					produto.Quantidade = 123;
+					produto.Ativo = true;
+
+					_contexto.Linq<Produto>().Add(produto);
+
+					_contexto.SaveChanges();
+
+					var produto2 = new Produto();
+
+					produto2.Preco = 90;
+					produto2.Quantidade = 123;
+					produto2.Ativo = true;
+
+					_contexto.Linq<Produto>().Add(produto2);
+
+					_contexto.SaveChanges();
+
+					tx.Complete();
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine("Operação Falhou");
+
+					throw;
+				}
+			}
+		}
+
 		private void ExibirQuery<T>(IQueryable<T> query)
 		{
 			var linha = new string('-', 100);
@@ -241,7 +283,7 @@
 			foreach (var item in resultado)
 			{
 				Console.WriteLine(item);
-				
+
 				Console.WriteLine(linha);
 			}
 		}

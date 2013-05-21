@@ -9,5 +9,6 @@
 		void Remover(int id);
 		Produto Atualizar(Produto produto);
 		Produto Inserir(Produto produto);
+		List<Produto> PesquisarProdutos(string termo, int qtdeRegistros);
 	}
 }

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CatalogoWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/MOC10265.Model" />
+      <xs:element name="PesquisarProdutos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="termo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="qtdeRegistros" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PesquisarProdutosResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MOC10265.Model" minOccurs="0" name="PesquisarProdutosResult" nillable="true" type="q1:ArrayOfProduto" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MOC10265.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MOC10265.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfProduto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Produto" nillable="true" type="tns:Produto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfProduto" nillable="true" type="tns:ArrayOfProduto" />
+      <xs:complexType name="Produto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ativo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DataPrimeiraCompra" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Departamentos" nillable="true" type="tns:ArrayOfDepartamento" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Preco" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantidade" type="xs:int" />
+          <xs:element minOccurs="0" name="Versao" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Produto" nillable="true" type="tns:Produto" />
+      <xs:complexType name="ArrayOfDepartamento">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Departamento" nillable="true" type="tns:Departamento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDepartamento" nillable="true" type="tns:ArrayOfDepartamento" />
+      <xs:complexType name="Departamento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Departamento" nillable="true" type="tns:Departamento" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ICatalogoWebService_PesquisarProdutos_InputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarProdutos" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogoWebService_PesquisarProdutos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PesquisarProdutosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICatalogoWebService">
+    <wsdl:operation name="PesquisarProdutos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogoWebService/PesquisarProdutos" message="tns:ICatalogoWebService_PesquisarProdutos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogoWebService/PesquisarProdutosResponse" message="tns:ICatalogoWebService_PesquisarProdutos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICatalogoWebService" type="tns:ICatalogoWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PesquisarProdutos">
+      <soap:operation soapAction="http://tempuri.org/ICatalogoWebService/PesquisarProdutos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CatalogoWebService">
+    <wsdl:port name="BasicHttpBinding_ICatalogoWebService" binding="tns:BasicHttpBinding_ICatalogoWebService">
+      <soap:address location="http://localhost:19523/Services/CatalogoWebService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

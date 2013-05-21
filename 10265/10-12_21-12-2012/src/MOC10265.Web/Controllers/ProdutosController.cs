@@ -5,15 +5,23 @@
 	using Model;
 	using Model.Services;
 	using Models;
+	using NLog;
 	using Persistence.ADO;
 	using Persistence.EF;
 
 	public class ProdutosController : Controller
 	{
 		private readonly CatalogoService _catalogoService;
+		private readonly Logger _logger;
 
 		public ProdutosController()
 		{
+			var factory = new LogFactory();
+
+			_logger = factory.GetLogger("Default");
+
+			_logger.Debug("Criando Controller");
+
 			// var produtoRepository = new ProdutoADORepository();
 			var produtoRepository = new ProdutoEFRepository();
 			var departamentoRepository = new DepartamentoEFRepository();
@@ -43,9 +51,13 @@
 
 			if (produto == null)
 			{
-				throw new Exception(string.Format("Produto com id '{0}' não encontrado", id));
+				var mensagem = string.Format("Produto com id '{0}' não encontrado", id);
 
-				return HttpNotFound(string.Format("Produto com id '{0}' não encontrado", id));
+				_logger.Error(mensagem);
+
+				throw new Exception(mensagem);
+
+				return HttpNotFound(mensagem);
 			}
 
 			var model = new EditarProdutoModel

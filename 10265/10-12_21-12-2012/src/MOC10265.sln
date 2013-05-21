@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo2.Shell", "Modulo2.Sh
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modulos", "Modulos", "{D8A90CF1-1DF7-4DBD-8D73-EBB64779B660}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOC10265.TestClient", "MOC10265.TestClient\MOC10265.TestClient.csproj", "{6100316D-56B2-44E9-8606-D6ED4DE707E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7829FC4E-44E9-4312-AE92-BBF52E9EB5DC} = {7829FC4E-44E9-4312-AE92-BBF52E9EB5DC}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,12 +50,16 @@ Global
 		{5BF2F2C3-BF44-47B0-B838-24E491E894EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF2F2C3-BF44-47B0-B838-24E491E894EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF2F2C3-BF44-47B0-B838-24E491E894EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6100316D-56B2-44E9-8606-D6ED4DE707E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6100316D-56B2-44E9-8606-D6ED4DE707E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6100316D-56B2-44E9-8606-D6ED4DE707E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6100316D-56B2-44E9-8606-D6ED4DE707E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{541BF7E0-1B5F-4492-A7BD-2FDD4BF649D2} = {D8A90CF1-1DF7-4DBD-8D73-EBB64779B660}
 		{5BF2F2C3-BF44-47B0-B838-24E491E894EB} = {D8A90CF1-1DF7-4DBD-8D73-EBB64779B660}
+		{541BF7E0-1B5F-4492-A7BD-2FDD4BF649D2} = {D8A90CF1-1DF7-4DBD-8D73-EBB64779B660}
 	EndGlobalSection
 EndGlobal

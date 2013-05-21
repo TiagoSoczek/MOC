@@ -33,6 +33,14 @@ namespace MOC10265.Web
 
 		protected void Application_Start()
 		{
+			var factory = new NLog.LogFactory();
+
+			var logger = factory.GetLogger("Default");
+
+			logger.Debug("Iniciando app...");
+
+			HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
+
 			AreaRegistration.RegisterAllAreas();
 
 			// Use LocalDB for Entity Framework by default
@@ -40,6 +48,8 @@ namespace MOC10265.Web
 
 			RegisterGlobalFilters(GlobalFilters.Filters);
 			RegisterRoutes(RouteTable.Routes);
+
+			logger.Debug("App Iniciada");
 		}
 	}
 }
