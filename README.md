@@ -30,7 +30,7 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 
 * http://www.jetbrains.com/resharper/ - Indispensável ;)
 * http://www.jetbrains.com/resharper/docs/ReSharper70DefaultKeymap_IDEA_scheme.pdf - Atalhos do R#
-* http://www.jetbrains.com/decompiler/ - Descompilador, muito bom!
+* http://www.jetbrains.com/decompiler/ - DotPeek Descompilador, muito bom!
 * http://shfb.codeplex.com/ - SandCastle - Gerar documentação estilo MSDN
 * http://archive.msdn.microsoft.com/sourceanalysis - StyleCop - Garante regras de documentação e estilo de código
 
@@ -47,6 +47,7 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 ### Web - JS - CSS
 
 * http://twitter.github.com/bootstrap/ - Base para construção de sites, muito profissa
+* http://angularjs.org/ - Framework Single Page Application (SPA)
 * http://harvesthq.github.com/chosen/ - ComboBox melhorada
 * http://ivaynberg.github.com/select2/ - ComboBox melhorada (2)
 * http://d3js.org/ - Exibição de dados utilizando gráficos, muito bom!
@@ -79,4 +80,3 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 
 * https://appharbor.com/ - Aplicações .NET
 * http://www.heroku.com/ - Aplicações  Ruby, Node.js, Clojure, Java, Python, e Scala
-                         
