@@ -17,9 +17,16 @@
 			Console.WriteLine(_qtde);
 			*/
 
-			ExemploArrays();
+			unchecked
+			{
+				var max = int.MaxValue;
 
-			return;
+				max++;
+
+				Console.WriteLine(max == int.MinValue);
+			}
+
+			ExemploArrays();
 
 			ExemploLooops();
 			ExemploSwitch();
@@ -126,6 +133,8 @@
 			var matriz = new int[4, 5];
 
 			var rnd = new Random();
+
+			var qtdeDimensoes = matriz.Rank; // 2
 
 			var colsNum = matriz.GetUpperBound(0);
 			var rowsNum = matriz.GetUpperBound(1);
