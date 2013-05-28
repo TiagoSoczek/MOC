@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{69F0A823-E743-4657-8D19-CFCDF8599BA1}</ProjectGuid>
+    <ProjectGuid>{02FF98F7-DEA8-4437-A80F-58F985932693}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Modulo6.Tests</RootNamespace>
-    <AssemblyName>Modulo6.Tests</AssemblyName>
+    <RootNamespace>Modulo8.Tests</RootNamespace>
+    <AssemblyName>Modulo8.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -53,14 +53,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ConexaoTestCase.cs" />
-    <Compile Include="ClienteTestCase.cs" />
+    <Compile Include="CalculoFolhaPagamentoTestCase.cs" />
+    <Compile Include="EmpregadoTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modulo6.Model\Modulo6.Model.csproj">
-      <Project>{a013e10f-ccb1-4495-81f8-41867b241326}</Project>
-      <Name>Modulo6.Model</Name>
+    <ProjectReference Include="..\Modulo8.Model\Modulo8.Model.csproj">
+      <Project>{8268127a-20ba-4a87-adb1-65fb87daca8c}</Project>
+      <Name>Modulo8.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

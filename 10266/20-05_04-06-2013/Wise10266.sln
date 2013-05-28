@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo6.Model", "Modulo6.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo6.Tests", "Modulo6.Tests\Modulo6.Tests.csproj", "{69F0A823-E743-4657-8D19-CFCDF8599BA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo8.Model", "Modulo8.Model\Modulo8.Model.csproj", "{8268127A-20BA-4A87-ADB1-65FB87DACA8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo8.Tests", "Modulo8.Tests\Modulo8.Tests.csproj", "{02FF98F7-DEA8-4437-A80F-58F985932693}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{69F0A823-E743-4657-8D19-CFCDF8599BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F0A823-E743-4657-8D19-CFCDF8599BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F0A823-E743-4657-8D19-CFCDF8599BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8268127A-20BA-4A87-ADB1-65FB87DACA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8268127A-20BA-4A87-ADB1-65FB87DACA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8268127A-20BA-4A87-ADB1-65FB87DACA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8268127A-20BA-4A87-ADB1-65FB87DACA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02FF98F7-DEA8-4437-A80F-58F985932693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02FF98F7-DEA8-4437-A80F-58F985932693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02FF98F7-DEA8-4437-A80F-58F985932693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02FF98F7-DEA8-4437-A80F-58F985932693}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

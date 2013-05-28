@@ -6,7 +6,7 @@
 
 		public static Conexao ObterAtual()
 		{
-			// Não está thread-safe!
+			// Não é thread-safe!
 
 			if (_atual == null)
 			{
