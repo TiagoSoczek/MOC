@@ -1,0 +1,29 @@
+﻿@model ExemploNH.Web.Models.ProdutosModel
+
+<h1>Produtos</h1>
+
+<div class="form-actions">
+	<a class="btn btn-primary" href="@Url.Action("Novo")">Novo</a>
+</div>
+
+@if (Model.Produtos.Count == 0)
+{
+	<div class="well well-large">Nenhum Produto cadastrado</div>
+}
+else
+{
+	var grid = new WebGrid(Model.Produtos, canSort: false);
+
+	@grid.GetHtml(
+	columns: grid.Columns(
+		grid.Column("Id"),
+		grid.Column("Nome"),
+		grid.Column("Preco"),
+		grid.Column("Quantidade"),
+		grid.Column(format: c => 
+			Html.Raw("<a class='btn btn-primary' href='"+ Url.Action("Editar", new {id = c.Id }) +"'>Editar</a> <a class='btn btn-danger' href='"+ Url.Action("Excluir", new {id = c.Id }) +"'>Excluir</a>")
+		)
+	),
+		tableStyle: "table table-condensed table-bordered table-striped"
+		)
+}
