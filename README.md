@@ -59,6 +59,7 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 * http://www.castleproject.org/ - Base para projetos
 * http://logging.apache.org/log4net/ -  Geração de Logs
 * http://nlog-project.org/ - Geração de Logs
+* https://code.google.com/p/elmah/ - Logs Web
 
 ## Material
 
