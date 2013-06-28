@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo1.WebForms", "Modulo1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo1.Web", "Modulo1.Web\Modulo1.Web.csproj", "{4C90E94D-6204-4403-8028-CABDDA0FBF66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulo5.Web", "Modulo5.Web\Modulo5.Web.csproj", "{2F44C601-9A7C-430C-9C2C-459BA23D7CD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{4C90E94D-6204-4403-8028-CABDDA0FBF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C90E94D-6204-4403-8028-CABDDA0FBF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C90E94D-6204-4403-8028-CABDDA0FBF66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F44C601-9A7C-430C-9C2C-459BA23D7CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F44C601-9A7C-430C-9C2C-459BA23D7CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F44C601-9A7C-430C-9C2C-459BA23D7CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F44C601-9A7C-430C-9C2C-459BA23D7CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,29 @@
+﻿@model Modulo5.Web.Models.LoginModel
+
+@{
+	ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@if (!string.IsNullOrWhiteSpace(Model.Mensagem))
+{
+	string cor = Model.Erro ? "red" : "green";
+	
+	<h3 style="color: @cor;">
+		@Model.Mensagem
+	</h3>
+}
+
+@using (Html.BeginForm("Logar", "Login"))
+{
+	@Html.HiddenFor(x => x.ReturnUrl)
+
+	@Html.LabelFor(x => x.Usuario) <br />
+	@Html.TextBoxFor(m => m.Usuario)<br />
+	
+	@Html.LabelFor(m => m.Senha) <br />
+	@Html.PasswordFor(m => m.Senha)<br />
+	
+	<input type="submit" value="Login" />
+}

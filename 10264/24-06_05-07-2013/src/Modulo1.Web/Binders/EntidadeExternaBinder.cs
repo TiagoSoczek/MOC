@@ -11,12 +11,7 @@
 
 			foreach (string item in (string[]) value.RawValue)
 			{
-				string[] valores = item.Split('@');
-
-				var entidadeExterna = new EntidadeExterna();
-
-				entidadeExterna.Id = int.Parse(valores[0]);
-				entidadeExterna.Sistema = valores[1];
+				var entidadeExterna = new EntidadeExterna(item);
 
 				return entidadeExterna;
 			}
