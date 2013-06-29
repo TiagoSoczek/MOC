@@ -1,4 +1,5 @@
-﻿@model Modulo5.Web.Models.LoginModel
+﻿@using Modulo5.Web.Helpers
+@model Modulo5.Web.Models.LoginModel
 
 @{
 	ViewBag.Title = "Login";
@@ -25,5 +26,5 @@
 	@Html.LabelFor(m => m.Senha) <br />
 	@Html.PasswordFor(m => m.Senha)<br />
 	
-	<input type="submit" value="Login" />
+	@Html.SubmitButton("Login")
 }

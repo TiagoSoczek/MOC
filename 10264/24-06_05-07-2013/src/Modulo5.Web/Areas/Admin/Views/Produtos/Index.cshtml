@@ -1,7 +1,32 @@
-﻿@model dynamic
+﻿@using Modulo5.Web.Extensions
+@using Modulo5.Web.Helpers
+@model Modulo5.Web.Areas.Admin.Models.ProdutosModel
 
 @{
 	ViewBag.Title = "Produtos";
 }
 
-<h1>@ViewBag.Title</h1>
+<h2>Produtos</h2>
+
+@using (Html.BeginForm("Index", "Produtos"))
+{
+	@Html.LabelFor(x => x.PrecoMinimo, "Preço Mínimo: ")
+	@Html.TextBoxFor(x => x.PrecoMinimo)
+
+	@Html.SubmitButton("Filtrar")
+}
+
+@foreach (var produto in Model.Produtos)
+{
+	<h1>@produto.Nome</h1>
+	<h3>@produto.Preco.ToString("c")</h3>
+	<h3>@produto.Quantidade</h3>
+	<h3>@string.Format("Data: {0:dd/MM/yyyy}", produto.DataCadastro)</h3>
+	<h3>@{
+		    TimeSpan diff = DateTime.Now - produto.DataCadastro;
+	    }
+		@diff.Hours
+	</h3>
+	<h3>@produto.DataCadastro.ObterOntem()</h3>
+	<hr />
+}
