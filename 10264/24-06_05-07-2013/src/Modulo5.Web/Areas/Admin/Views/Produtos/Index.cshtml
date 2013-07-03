@@ -19,14 +19,15 @@
 @foreach (var produto in Model.Produtos)
 {
 	<h1>@produto.Nome</h1>
-	<h3>@produto.Preco.ToString("c")</h3>
-	<h3>@produto.Quantidade</h3>
-	<h3>@string.Format("Data: {0:dd/MM/yyyy}", produto.DataCadastro)</h3>
+	<h3>@((produto.Preco + 1).ToString("c"))</h3>
+	<h3>@produto.Quantidade - @(produto.Quantidade + 10)</h3>
+	<h3>@string.Format("Data: {0:dd/MM/yyyy} {0} {1:c}", produto.DataCadastro, produto.Preco)</h3>
 	<h3>@{
 		    TimeSpan diff = DateTime.Now - produto.DataCadastro;
 	    }
 		@diff.Hours
 	</h3>
+	<h3>@Model.ObterDiff(produto)</h3>
 	<h3>@produto.DataCadastro.ObterOntem()</h3>
 	<hr />
 }

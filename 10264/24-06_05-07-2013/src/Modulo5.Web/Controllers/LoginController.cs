@@ -1,5 +1,6 @@
 ﻿namespace Modulo5.Web.Controllers
 {
+	using System;
 	using System.Web.Mvc;
 	using System.Web.Security;
 	using Models;
@@ -13,8 +14,8 @@
 
 		public ActionResult Logar(LoginModel model)
 		{
-			if (model.Usuario == "tiago" && 
-						model.Senha == "soczek")
+			if ("tiago".Equals(model.Usuario, StringComparison.InvariantCultureIgnoreCase) && 
+						model.Senha.Equals("soczek"))
 			{
 				FormsAuthentication.SetAuthCookie(model.Usuario, true);
 

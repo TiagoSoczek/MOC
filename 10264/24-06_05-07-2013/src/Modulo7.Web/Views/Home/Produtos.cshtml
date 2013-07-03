@@ -1,0 +1,33 @@
+﻿@using System.Globalization
+@using System.Threading
+@using Modulo7.Web
+@model dynamic
+
+@{
+	ViewBag.Title = "Produtos";
+}
+
+@PrintLocalization()
+@PrintLocalization(new CultureInfo("en-US"))
+@PrintLocalization(new CultureInfo("es-ES"))
+@PrintLocalization(new CultureInfo("ja-JP"))
+@PrintLocalization(new CultureInfo("pl-PL"))
+@PrintLocalization(new CultureInfo("ne-NP"))
+
+@helper PrintLocalization(CultureInfo newCulture = null)
+{
+	if (newCulture != null)
+	{
+		Thread.CurrentThread.CurrentCulture = newCulture;
+		Thread.CurrentThread.CurrentUICulture = newCulture;
+	}
+	<div>
+		<h1>@Thread.CurrentThread.CurrentCulture</h1>
+		<h1>@Thread.CurrentThread.CurrentUICulture</h1>
+		@Mensagens.Nome @Html.Raw("Xbox One")<br />
+		@Mensagens.Preco @(123.99.ToString("c"))<br />
+		@Mensagens.DataCadastro @DateTime.Now<br />
+	</div>
+	
+	<hr />
+}

@@ -1,0 +1,29 @@
+﻿@using Modulo7.Web
+@model Modulo7.Web.Models.ProdutoModel
+
+@{
+	ViewBag.Title = "Produtos";
+}
+
+@using (Html.BeginForm("Salvar","Produtos"))
+{
+	@Html.ValidationSummary("Erro ao validar formulário")
+	<hr /><hr />
+
+	@Html.LabelFor(x => x.Nome, Mensagens.Nome)
+	@Html.TextBoxFor(x => x.Nome)
+	@Html.ValidationMessageFor(x => x.Nome)
+	<hr />
+	
+	@Html.LabelFor(x => x.Preco, Mensagens.Preco)
+	@Html.TextBoxFor(x => x.Preco)
+	@Html.ValidationMessageFor(x => x.Preco)
+	<hr />
+	
+	@Html.LabelFor(x => x.DataCadastro, Mensagens.DataCadastro)
+	@Html.TextBoxFor(x => x.DataCadastro)
+	@Html.ValidationMessageFor(x => x.DataCadastro)
+	<hr />
+	
+	<input type="submit" />
+}

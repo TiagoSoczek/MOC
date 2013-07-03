@@ -1,0 +1,33 @@
+﻿@model dynamic
+
+@{
+	ViewBag.Title = "Home";
+}
+
+@section Scripts
+{
+	<script type="text/javascript">
+		$(function() {
+			$("#btn-atualizar").click(function () {
+
+				var title = $("#titulo").val();
+
+				$.post("@Url.Action("Hero")", { title: title }, function(html) {
+
+					$("#resultado").html(html);
+					
+				});
+
+			});
+		});
+	</script>
+}
+
+<input type="text" id="titulo" />
+<input type="button" id="btn-atualizar" value="Atualizar" />
+
+<div id="resultado">
+	
+</div>
+
+@Html.Partial("_HeroHeader", "Titulo Qualquer")

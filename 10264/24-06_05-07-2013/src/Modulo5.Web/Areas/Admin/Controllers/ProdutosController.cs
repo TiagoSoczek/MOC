@@ -1,49 +1,23 @@
 ﻿namespace Modulo5.Web.Areas.Admin.Controllers
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 	using System.Web.Mvc;
-	using Extensions;
+	using Core.Model;
 	using Models;
 
 	public class ProdutosController : SecureController
 	{
-		public ActionResult Index(ProdutosModel model)
+		private readonly CatalogoService _catalogoService;
+
+		public ProdutosController()
 		{
-			model.Produtos = CarregarProdutos();
-
-			if (model.PrecoMinimo.HasValue)
-			{
-				//List<Produto> produtos = model.Produtos.Filtrar();
-				model.Produtos = model.Produtos.
-					Where(p => p.Preco >= model.PrecoMinimo).
-					ToList();
-			}
-
-			return View(model);
+			_catalogoService = new CatalogoService();
 		}
 
-		private List<Produto> CarregarProdutos()
+		public ActionResult Index(ProdutosModel model)
 		{
-			List<Produto> produtos = new List<Produto>();
-			var agora = DateTime.Now;
-			Random rnd = new Random();
+			model.Produtos = _catalogoService.ObterPorPrecoMinimo(model.PrecoMinimo);
 
-			for (int i = 0; i < rnd.Next(50, 100); i++)
-			{
-				Produto p = new Produto();
-
-				p.Id = rnd.Next(i, 100);
-				p.Nome = "Produto#" + rnd.Next(i, 1000);
-				p.Preco = rnd.Next(1, 500);
-				p.Quantidade = rnd.Next(i, 100);
-				p.DataCadastro = agora.AddHours(-i);
-
-				produtos.Add(p);
-			}
-
-			return produtos;
+			return View(model);
 		}
 	}
 }
