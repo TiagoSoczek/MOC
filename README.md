@@ -82,3 +82,7 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 
 * https://appharbor.com/ - Aplicações .NET
 * http://www.heroku.com/ - Aplicações  Ruby, Node.js, Clojure, Java, Python, e Scala
+
+## Outros
+
+* https://github.com/wesbos/aprilFools.css - Bons exemplos de CSS :)
