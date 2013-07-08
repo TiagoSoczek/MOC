@@ -1,0 +1,34 @@
+﻿@model ExemploADO.Web.Models.CatalogoModel
+
+@{
+	ViewBag.Title = "Catalogo";
+}
+
+<h2>Catalogo</h2>
+
+@using (Html.BeginForm("PorMarca", "Catalogo"))
+{
+	@Html.TextBoxFor(x => x.Marca) <br />
+
+	<input type="submit" value="filtrar" />
+}
+
+<h1>Carros</h1>
+
+@foreach (var carro in Model.Carros)
+{
+	<h3>@carro.Id</h3>
+	<h3>@carro.Modelo</h3>
+	<h3>@carro.AnoFabricacao / @carro.AnoModelo</h3>
+	<h3>@carro.Cor</h3>
+	<h3>@carro.CadastradoEm</h3>
+}
+
+<h1>Modelos</h1>
+
+@foreach (var modelo in Model.Modelos)
+{
+	<h3>@modelo.Marca</h3>
+	<h3>@modelo.Nome</h3>
+	<h3>@modelo.Id</h3>
+}

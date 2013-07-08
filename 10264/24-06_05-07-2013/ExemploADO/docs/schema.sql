@@ -1,0 +1,37 @@
+CREATE DATABASE [ExemploADO]
+GO
+
+USE [ExemploADO]
+GO
+
+CREATE TABLE [dbo].[Carro](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdModelo] [int] NOT NULL,
+	[AnoFabricacao] [int] NOT NULL,
+	[AnoModelo] [int] NOT NULL,
+	[Cor] [int] NOT NULL,
+	[CadastradoEm] [datetime] NOT NULL,
+ CONSTRAINT [PK_Carro] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[Modelo](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Marca] [nvarchar](100) NOT NULL,
+	[Nome] [nvarchar](100) NOT NULL,
+ CONSTRAINT [PK_Modelo] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Carro]  WITH CHECK ADD  CONSTRAINT [FK_Carro_Modelo] FOREIGN KEY([IdModelo])
+REFERENCES [dbo].[Modelo] ([Id])
+GO
+ALTER TABLE [dbo].[Carro] CHECK CONSTRAINT [FK_Carro_Modelo]
+GO
