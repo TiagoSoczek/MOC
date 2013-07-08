@@ -56,6 +56,15 @@
     <Compile Include="PedidoTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modulo7.Core\Modulo7.Core.csproj">
+      <Project>{AEE09562-9517-4AD4-BFA3-FAE4CDBB5115}</Project>
+      <Name>Modulo7.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

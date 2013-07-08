@@ -3,29 +3,31 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Modulo7.Tests
 {
+	using Core.Model;
+
 	[TestClass]
 	public class PedidoTestCase
 	{
 		[TestMethod]
-		public void CalcularDesconto()
+		public void ObterValorTotal()
 		{
 			Pedido pedido = new Pedido();
 
-			pedido.TotalProdutos = 1000.0;
+			pedido.Total = 1000.0;
 			pedido.Desconto = 50;
 
-			Assert.AreEqual(500, pedido.ObterValorTotal());
+			Assert.AreEqual(500, pedido.ObterValorTotal(0));
 		}
-	}
 
-	public class Pedido
-	{
-		public double TotalProdutos { get; set; }
-		public int Desconto { get; set; }
-
-		public double ObterValorTotal()
+		[TestMethod, ExpectedException(typeof(ArgumentException))]
+		public void ObterValorTotal_QuandoTotalProdutosZerado_DispararException()
 		{
-			throw new NotImplementedException();
+			Pedido pedido = new Pedido();
+
+			pedido.Total = 0;
+			pedido.Desconto = 50;
+
+			pedido.ObterValorTotal(0);
 		}
 	}
 }

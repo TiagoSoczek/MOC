@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "About Us";
+}
+
+<style>
+	#conteudo-dinamico {
+		height: 100px;
+		border: 1px solid red;
+		overflow: hidden;
+	}
+
+	.carregando {
+		display: none;
+	}
+
+	.loading {
+		color: red;
+	}
+</style>
+
+<script>
+	$(document).ready(function () {
+	
+		// http://jsfiddle.net/dmin7b5/ZyxaM/18/
+		
+		$(document).ajaxSend(function (event, jqxhr, settings) {
+			console.log("ajaxSend");
+			$(".carregando").slideDown();
+		});
+		
+		$(document).ajaxComplete(function (event, jqxhr, settings) {
+			console.log("ajaxComplete");
+			$(".carregando").slideUp();
+		});
+
+		$(document).ajaxError(function (event, jqxhr, settings) {
+			console.log("ajaxError");
+			$(".carregando").slideUp();
+		});
+
+		$("#conteudo-estatico").html("<h1>Opa!</h1>");
+
+		$("#btn-carregar").click(function () {
+			// $("#conteudo-dinamico").load("@Url.Action("Index")");
+
+			$.get("@Url.Action("Index")", function (html) {
+
+				$("#conteudo-dinamico").html(html);
+
+			});
+		});
+
+		/*$("DIV").click(function (a, b) {
+			$(this).slideToggle();
+		});*/
+	});
+</script>
+
+<div id="conteudo-estatico"></div>
+<div id="conteudo-dinamico"></div>
+<button id="btn-carregar">Carregar</button>
+<div class="carregando">Carregando...</div>
+<div class="carregando loading">Loading...</div>
