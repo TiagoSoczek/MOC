@@ -15,5 +15,15 @@
 		<%= Model.Agora.ToString("D") %>
 		<hr />
 		<%= Model.Preco.ToString("C") %>
+		
+		<hr />
+		
+		<% foreach (var produto in Model.Produtos)
+		   { %>
+				<h5><%= produto.Nome %></h5>
+				<small><%= produto.Preco %></small>
+				<hr />
+		<% } %>
+
 	</body>
 </html>
