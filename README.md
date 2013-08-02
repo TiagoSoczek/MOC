@@ -73,6 +73,8 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 * http://msdn.microsoft.com/pt-br/library/system.security.cryptography.md5.aspx - Hash de senhas, etc...
 * http://www.dotnetcurry.com/ShowArticle.aspx?ID=121 - Dicas ASP.NET Validation
 * http://studiostyl.es/ - Estilos para o Visual Studio
+* http://getglimpse.com/ - F12 do ASP.NET
+* http://miniprofiler.com/ - Profiler simplificado
 
 ## Blogs
 
