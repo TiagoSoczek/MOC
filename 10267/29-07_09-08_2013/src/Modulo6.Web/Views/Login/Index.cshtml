@@ -1,0 +1,23 @@
+﻿@model Modulo6.Web.Models.LoginViewModel
+
+@{
+	ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Logar", "Login"))
+{
+	@Html.ValidationSummary()
+	
+	@Html.LabelFor(x => x.Usuario)
+	@Html.TextBoxFor(x => x.Usuario)
+	@Html.ValidationMessageFor(x => x.Usuario, "*")
+
+	<br />
+	@Html.LabelFor(x => x.Senha)
+	@Html.PasswordFor(x => x.Senha)
+	@Html.ValidationMessageFor(x => x.Senha, "*")
+
+	<input type="submit" value="Login" />
+}
