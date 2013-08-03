@@ -1,6 +1,7 @@
 ﻿namespace Modulo6.Web.Controllers
 {
 	using System;
+	using System.Diagnostics;
 	using System.Web.Mvc;
 	using Core;
 	using Models;
@@ -25,7 +26,13 @@
 
 			AutenticacaoService service = new AutenticacaoService();
 
+			Stopwatch sw = Stopwatch.StartNew();
+
 			bool resultado = service.Autenticar(model.Usuario, model.Senha);
+
+			sw.Stop();
+
+			Trace.WriteLine("Autenticar em " + sw.ElapsedMilliseconds);
 
 			if (!resultado)
 			{
