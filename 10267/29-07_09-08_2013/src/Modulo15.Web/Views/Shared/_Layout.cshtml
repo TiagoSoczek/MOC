@@ -1,0 +1,39 @@
+﻿@using Modulo15.Web
+
+@{
+	var usuariosOnline = (int)HttpContext.Current.Application[Constantes.AppUsuarios];
+
+	var inicioSessao = (DateTime)HttpContext.Current.Session[Constantes.SessionDuracao];
+
+	var duracao = DateTime.Now - inicioSessao;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>@ViewBag.Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="@Url.Content("~/lib/bootstrap/css/bootstrap.min.css")" rel="stylesheet" media="screen">
+	<link href="@Url.Content("~/lib/fontawesome/css/font-awesome.min.css")" rel="stylesheet" media="screen">
+	
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="@Url.Content("~/lib/fontawesome/css/font-awesome-ie7.min.css")">
+	<![endif]-->
+
+	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" media="screen">
+</head>
+<body>
+	<ul>
+		<li>Usuários Online: @usuariosOnline</li>
+		<li>Duração:  @duracao</li>
+		<li>
+			<a data-toggle="tooltip" title="Fugindo patão?" href="@Url.Action("Logout", "Login")" class="btn btn-primary"><i class="icon-beer"></i>Sair</a>
+		</li>
+	</ul>
+	
+	@RenderBody()
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="@Url.Content("~/lib/bootstrap/js/bootstrap.min.js")"></script>
+</body>
+</html>

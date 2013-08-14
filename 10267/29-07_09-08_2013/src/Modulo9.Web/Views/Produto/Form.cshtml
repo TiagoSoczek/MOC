@@ -1,0 +1,29 @@
+﻿@model Modulo9.Web.Controllers.GestaoProdutoViewModel
+
+@{
+	ViewBag.Title = "Produto";
+}
+
+<h2>Produto</h2>
+
+@using (Html.BeginForm("Salvar", "Produto"))
+{
+	@Html.HiddenFor(x => x.Id)
+
+	@Html.LabelFor(x => x.Nome)
+	@Html.TextBoxFor(x => x.Nome, new { @class = "input-large" })
+	@Html.ValidationMessageFor(x => x.Nome, "*")
+	<br />
+	
+	@Html.LabelFor(x => x.Preco)
+	@Html.TextBoxFor(x => x.Preco)
+	@Html.ValidationMessageFor(x => x.Preco, "*")
+	<br />
+	
+	@Html.LabelFor(x => x.Ativo)
+	@Html.CheckBoxFor(x => x.Ativo)
+	@Html.ValidationMessageFor(x => x.Ativo, "*")
+	<br />
+	
+	<input type="submit" value="Salvar" />
+}

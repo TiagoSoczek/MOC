@@ -13,44 +13,60 @@ namespace Modulo9.Shell
 		{
 			var connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Wise10267;Integrated Security=True;Pooling=False";
 
-			SqlConnection conn = new SqlConnection(connectionString);
+			using (var conn = new SqlConnection(connectionString))
+			{
+				conn.Open();
 
-			conn.Open();
+				// var cmd = new SqlCommand("SQL", conn);
 
-			// var cmd = new SqlCommand("SQL", conn);
-			
-			var cmd = conn.CreateCommand();
+				var cmd = conn.CreateCommand();
 
-			cmd.CommandText = @"INSERT INTO Produto 
+				cmd.CommandText = @"INSERT INTO Produto 
 								(Nome, Preco, Ativo) VALUES
 								(@nome, @preco, @ativo)";
 
-			cmd.Parameters.AddWithValue("nome", "Atari Jaguar");
-			cmd.Parameters.AddWithValue("preco", 900.50);
-			cmd.Parameters.AddWithValue("ativo", true);
+				cmd.Parameters.AddWithValue("nome", "Atari Jaguar");
+				cmd.Parameters.AddWithValue("preco", 900.50);
+				cmd.Parameters.AddWithValue("ativo", true);
 
-			int registrosAfetados = cmd.ExecuteNonQuery();
+				int registrosAfetados = cmd.ExecuteNonQuery();
 
-			Console.WriteLine(registrosAfetados);
+				Console.WriteLine(registrosAfetados);
 
-			var cmdConsulta = conn.CreateCommand();
+				var cmdConsulta = conn.CreateCommand();
 
-			cmdConsulta.CommandText = "SELECT * FROM Produto";
+				cmdConsulta.CommandText = "SELECT * FROM Produto";
 
-			var dr = cmdConsulta.ExecuteReader();
-
-			while (dr.Read())
-			{
-				Console.WriteLine("Nome: {0}", dr["Nome"]);
-				Console.WriteLine("Preço: {0:c}", dr["Preco"]);
-				Console.WriteLine("Ativo: {0}", dr["Ativo"]);
+				using (SqlDataReader dr = cmdConsulta.ExecuteReader())
+				{
+					while (dr.Read())
+					{
+						Console.WriteLine("Nome: {0}", dr["Nome"]);
+						Console.WriteLine("Preço: {0:c}", dr["Preco"]);
+						Console.WriteLine("Ativo: {0}", dr["Ativo"]);
+					}
+				}
 			}
 
-			dr.Close();
-
-			conn.Close();
+			using (LeitorDeArquivos la = new LeitorDeArquivos())
+			{
+				Console.WriteLine("LeitorDeArquivos:Internal");
+			}
 
 			Console.ReadLine();
+		}
+	}
+
+	public class LeitorDeArquivos : IDisposable
+	{
+		public LeitorDeArquivos()
+		{
+			Console.WriteLine("LeitorDeArquivos:Construtor");
+		}
+
+		public void Dispose()
+		{
+			Console.WriteLine("LeitorDeArquivos:Dispose");
 		}
 	}
 }

@@ -1,0 +1,29 @@
+﻿@model Modulo9.Web.Controllers.ProdutosViewModel
+
+@{
+	ViewBag.Title = "Produtos";
+}
+
+<h2>Produtos</h2>
+
+@Html.ActionLink("Novo", "Novo")
+
+<hr />
+
+@using (Html.BeginForm("Index", "Produto"))
+{
+	@Html.TextBoxFor(x => x.Termos)
+
+	<input type="submit" value="Pesquisar" />
+}
+
+@foreach (var produto in Model.Produtos)
+{
+	@Html.ActionLink("Editar", "Editar", new { id = produto.Id })
+
+	<h1>@produto.Nome</h1>
+	<small>@produto.Id</small>
+	<h5>@produto.Preco</h5>
+	<h5>@produto.Ativo</h5>
+	<hr />
+}

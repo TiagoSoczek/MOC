@@ -1,0 +1,68 @@
+﻿@model dynamic
+
+@{
+	ViewBag.Title = "Ajax";
+}
+
+<script>
+
+	function atualizarCurso(data) {
+
+		console.table([data]);
+
+		$("#curso").html(data.Curso);
+		$("#ano").val(data.Ano);
+	}
+
+	function exibirErro(a,b,c) {
+
+		alert("Ops, algo deu errado...");
+
+		console.log(a);
+		console.log(b);
+		console.log(c);
+	}
+
+	$(function() {
+
+		$("#btn-json").click(function () {
+
+			$.get("@Url.Action("ObterDadosEmJson")", atualizarCurso).
+				error(exibirErro);
+
+		});
+		
+	});
+
+</script>
+
+<h2>Ajax na "Unha"</h2>
+
+<button id="btn-json">Carregar Json</button>
+<h1 id="curso"></h1>
+<input type="text" id="ano"></input>
+
+<hr />
+
+<h2>Ajax usando ASP.NET MVC</h2>
+
+@Ajax.ActionLink("Atualizar", "Listar", new AjaxOptions
+{
+	UpdateTargetId = "resultado",
+	LoadingElementId = "carregando"
+})
+
+@using (Ajax.BeginForm("Listar", new AjaxOptions
+							{
+								UpdateTargetId = "resultado",
+								LoadingElementId = "carregando"
+							}))
+{
+	@Html.Label("Quantidade: ")
+	@Html.TextBox("Quantidade")
+
+	<input type="submit" value="Atualizar"/>
+}
+
+<div id="carregando" style="display: none;">Carregando...</div>
+<div id="resultado"></div>
