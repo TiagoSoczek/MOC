@@ -61,6 +61,7 @@ Conteúdo dos Cursos Oficiais Microsoft (MOC)
 * http://logging.apache.org/log4net/ -  Geração de Logs
 * http://nlog-project.org/ - Geração de Logs
 * https://code.google.com/p/elmah/ - Logs Web
+* https://github.com/Topshelf/Topshelf - Criação de Windows Service simplificada
 
 ## Material
 
